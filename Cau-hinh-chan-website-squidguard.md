@@ -26,11 +26,57 @@ Trong bài viết này, chúng tôi sẽ hướng dẫn các bạn cấu hình m
 
 <a name="21" />
 
-#### 2.1 
+#### 2.1 Tạo CA
+
+Như chúng ta đã biết, HTTPS sử dụng CA để xác thực. Chúng ta tạo CA internal này và cài lên các máy mà Firewall quản lý.
+
+Thao tác như sau: **System > Cert. Manager**
+
+<img src="/images/CA-1.png" />
+
+Chọn **CA > New **
+
+<img src="/images/CA-2.png" />
+
+Điền tên cho CA và chọn **Method: Create an internal Certificate Authority**, sau đó điền đầy đủ thông tin của bạn vào các trường.
+
+<img src="/images/CA-3.png" />
+
+Nhấn vào **SAVE** để lưu lại.
+
+<img src="/images/CA-4.png" />
+
+Thông tin của CA mới được hiển thị.
+
+<img src="/images/CA-5.png" />
+
+Nhấp vào biểu tượng hình sao (**Export CA**) để tải CA về và copy vào các máy client.
+
+<img src="/images/CA-6.png" />
 
 <a name="22" />
 
-#### 2.2 
+#### 2.2 Cài đặt gói Squid và SquidGuard
+
+Trong phần này, chúng ta sẽ cài đặt gói `squid` - một Proxy Server khá nổi tiếng. Thao tác như sau:
+
+Chúng ta vào **System > Package Manager** 
+
+<img src="/images/packet-1.png" />
+
+Chọn tab **Available Package**, gõ `squid` vào ô tìm kiếm và bấm **Search**
+
+Chúng cài đặt lần lượt 2 gói `squid` và `squidGuard` bằng cách bấm vào nút `+ Install`
+
+<img src="/images/packet-2.png" />
+
+Chúng cài đặt lần lượt 2 gói `squid` và `squidGuard` bằng cách bấm vào nút `+ Install`. Trong hình, chúng tôi cài mẫu gói `squid`.
+
+<img src="/images/packet-3.png" />
+
+Bấm **Confirm** để xác nhận cho việc cài đặt.
+
+
 
 <a name="23" />
 

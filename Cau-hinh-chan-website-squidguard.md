@@ -186,7 +186,7 @@ Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình cơ 
 	
 	<img src="/images/sg-10.png" />
 	
-### 3. Kiểm tra 
+### 3. Kiểm tra
 
 <img src="/images/test-1.png" />
 

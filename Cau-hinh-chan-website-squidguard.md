@@ -88,7 +88,7 @@ Chọn tab **Available Package**, gõ `squid` vào ô tìm kiếm và bấm **Se
 	
 	<img src="/images/package-6.png" />
 
-	Chúng ta chuyển sang bước tiếp theo để cấu hình `squid`.
+Chúng ta chuyển sang bước tiếp theo để cấu hình `squid`.
 
 <a name="23" />
 
@@ -96,6 +96,44 @@ Chọn tab **Available Package**, gõ `squid` vào ô tìm kiếm và bấm **Se
 
 Tiếp đến, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
 
+- **Bước 1**: Mở phần cấu hình của `squid`
 
+	Trên Menu, chúng ta chọn **Services > Squid Proxy Server**
+
+	<img src="/images/squid-1.png" />
+
+- **Bước 2**: Cấu hình **Local Cache**
+	
+	Chọn tab **Local Cache**. Tại đây, chúng ta có thể chỉnh dung lượng lưu trữ cho cache, không lưu trữ cache từ IP nào,... Tuy nhiên, chúng tôi sẽ sử dụng những thông số mặc định. Kéo xuống dưới và chọn **SAVE**.
+	
+	<img src="/images/squid-3.png" />
+	
+	<img src="/images/squid-4.png" />
+	
+- **Bước 3**: Cấu hình `squid`
+
+	- Kích hoạt `squid`
+	
+	Chọn tab **Gerenal**, tích vào ô "Check to enable the Squid proxy."
+
+	<img src="/images/squid-5.png" />
+	
+	- Cấu hình "Transparent Proxy Settings", tùy chọn này cho phép tất cả các luồng traffic từ client sẽ qua cổng 80 thay vì 3218 mặc định. Vì vậy, không phải khai báo cấu hình trên Client.
+	
+	<img src="/images/squid-9.png" />
+	
+	- Bật tính năng **SSL Man In the Middle Filtering** và chọn CA mới tạo ở Bước 1.	
+	
+	<img src="/images/squid-6.png" />
+	
+	- Bật tính năng ghi Log và cấu hình log xoay vòng trong 7 ngày.
+	
+	<img src="/images/squid-7.png" />
+	
+	- Lưu lại thông tin và cấu hình
+	
+	<img src="/images/squid-8.png" />
+	
 <a name="24" />
-#### 2.4
+
+#### 2.4 Cấu hình `squidGuard`

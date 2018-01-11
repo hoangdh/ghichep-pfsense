@@ -137,3 +137,58 @@ Tiếp đến, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
 <a name="24" />
 
 #### 2.4 Cấu hình `squidGuard`
+
+Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
+	
+	<img src="/images/sg-1.png" />
+
+- **Bước 1**: Tạo danh sách các website bị cấm truy cập
+
+	Chọn tab **Target categories > Add** 
+	
+	<img src="/images/sg-2.png" />
+	
+	Đặt tên cho Category và liệt kê các domain bị chặn. Trong ví dụ này, chúng tôi chặn 2 domain là `facebook.com` và `youtube.com`.
+	
+	<img src="/images/sg-3.png" />
+	
+	Cuộn chuột xuống bên dưới tích vào tùy chọn ghi lại Log.
+	
+	<img src="/images/sg-4.png" />
+	
+- **Bước 2**: Áp dụng **Deny** cho category
+
+	Chọn tab **Common ACL** và áp dụng chính sách **Deny**
+
+	<img src="/images/sg-5.png" />
+	
+	Bật tùy chọn ghi log và lưu lại cấu hình.
+	
+	<img src="/images/sg-6.png" />
+
+- **Bước 3**: Kích hoạt `squidGuard`
+
+	Tích vào tùy chọn và bấm vào `Apply`.
+	
+	**Lưu ý**: Mỗi khi có thay đổi ở phần **Target categories**, chúng ta phải bấm vào nút `Apply` để áp dụng những thay đổi.
+	
+	<img src="/images/sg-7.png" />
+	
+	`squidGuard` đã được kích hoạt.
+	
+	<img src="/images/sg-8.png" />
+	
+- **Bước 4**: Cấu hình thêm về `squidGuard` ghi log
+
+	<img src="/images/sg-9.png" />
+	
+	Bấm **SAVE** để lưu lại.
+	
+	<img src="/images/sg-10.png" />
+	
+### 3. Kiểm tra 
+
+<img src="/images/test-1.png" />
+
+<img src="/images/test-2.png" />
+	

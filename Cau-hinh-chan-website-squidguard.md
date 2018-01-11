@@ -34,7 +34,7 @@ Thao tác như sau: **System > Cert. Manager**
 
 <img src="/images/CA-1.png" />
 
-Chọn **CA > New **
+Chọn **CAs > New**
 
 <img src="/images/CA-2.png" />
 
@@ -60,27 +60,42 @@ Nhấp vào biểu tượng hình sao (**Export CA**) để tải CA về và co
 
 Trong phần này, chúng ta sẽ cài đặt gói `squid` - một Proxy Server khá nổi tiếng. Thao tác như sau:
 
-Chúng ta vào **System > Package Manager** 
+- **Bước 1**: Chúng ta vào **System > Package Manager** 
 
-<img src="/images/packet-1.png" />
+<img src="/images/package-1.png" />
+
+- **Bước 2**: Tìm kiếm gói cài đặt
 
 Chọn tab **Available Package**, gõ `squid` vào ô tìm kiếm và bấm **Search**
 
-Chúng cài đặt lần lượt 2 gói `squid` và `squidGuard` bằng cách bấm vào nút `+ Install`
+<img src="/images/package-2.png" />
 
-<img src="/images/packet-2.png" />
+- **Bước 3**: Cài đặt 2 gói `squid` và `squidGuard`
 
-Chúng cài đặt lần lượt 2 gói `squid` và `squidGuard` bằng cách bấm vào nút `+ Install`. Trong hình, chúng tôi cài mẫu gói `squid`.
+	- Chúng cài đặt lần lượt 2 gói `squid` và `squidGuard` bằng cách bấm vào nút `+ Install`. Trong hình, chúng tôi cài mẫu gói `squid`.
+	
+	- Bấm **Confirm** để xác nhận cho việc cài đặt.
+	
+	<img src="/images/package-3.png" />
 
-<img src="/images/packet-3.png" />
+	- Chờ vài phút, `squid` đã cài xong.
+	
+	<img src="/images/package-4.png" />
+	
+	- Tương tự, chúng ta tìm kiếm và xác nhận cài đặt gói `squidGuard`.
+	
+	<img src="/images/package-5.png" />
+	
+	<img src="/images/package-6.png" />
 
-Bấm **Confirm** để xác nhận cho việc cài đặt.
-
-
+	Chúng ta chuyển sang bước tiếp theo để cấu hình `squid`.
 
 <a name="23" />
 
-#### 2.3
+#### 2.3 Cấu hình `squid`
+
+Tiếp đến, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
+
 
 <a name="24" />
 #### 2.4

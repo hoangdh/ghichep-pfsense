@@ -16,9 +16,9 @@
 	
 ### 1. Giới thiệu
 
-[pfSense](https://www.pfsense.org)® là một ứng dụng miễn phí, mã nguồn mở được chỉnh sửa từ bản phân phối FreeDSD; nó có tính năng như một router, một firewall quản lý và cấu hình trên giao diện Web thân thiện. Thêm vào đó, nó còn cung cấp các gói để mở rộng thêm tính năng cho người sử dụng có nhiều tùy chọn trong quá trình sử dụng mà dung lượng tăng lên không đáng kể.
+[pfSense](https://www.pfsense.org)® là một ứng dụng miễn phí, mã nguồn mở được chỉnh sửa từ bản phân phối FreeBSD; nó có tính năng như một router, một firewall quản lý và cấu hình trên giao diện Web thân thiện. Thêm vào đó, nó còn cung cấp các gói để mở rộng thêm tính năng cho người sử dụng có nhiều tùy chọn trong quá trình sử dụng mà dung lượng tăng lên không đáng kể.
 
-Trong bài viết này, chúng tôi sẽ hướng dẫn các bạn cấu hình một Proxy sêrver sử dụng pfSense để chặn truy cập vào một số website có sử dụng HTTPS (HTTP + SSL) như Facebook, YouTube,... Dưới đây là phần hướng dẫn chi tiết.
+Trong bài viết này, chúng tôi sẽ hướng dẫn các bạn cấu hình một Proxy server sử dụng pfSense để chặn truy cập vào một số website có sử dụng HTTPS (HTTP + SSL) như Facebook, YouTube,... Dưới đây là phần hướng dẫn chi tiết.
 
 <a name="2" />
 
@@ -138,9 +138,9 @@ Tiếp đến, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
 
 #### 2.4 Cấu hình `squidGuard`
 
-Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
+Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình `squidGuard` để xác định những danh sách những địa chỉ nào được phép, địa chỉ nào bị cấm truy cập.
 	
-	<img src="/images/sg-1.png" />
+<img src="/images/sg-1.png" />
 
 - **Bước 1**: Tạo danh sách các website bị cấm truy cập
 
@@ -186,9 +186,46 @@ Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình cơ 
 	
 	<img src="/images/sg-10.png" />
 	
-### 3. Kiểm tra
+### 3. Hướng dẫn thêm CA lên máy client
+
+#### 3.1 Cài CA lên máy
+
+Thông thường các trình duyệt Web đều sử dụng chung một kho CA. Chúng ta làm theo các bước sau để thêm một CA vào 'kho' đó.
+
+Sau khi copy CA mà chúng ta đã tạo lên client. Chúng ta mở CA lên:
+
+<img src="/images/client1.png" />
+
+<img src="/images/client2.png" />
+
+<img src="/images/client3.png" />
+
+<img src="/images/client4.png" />
+
+<img src="/images/client5.png" />
+
+<img src="/images/client6.png" />
+
+<img src="/images/client7.png" />
+
+<img src="/images/client8.png" />
+
+<img src="/images/client9.png" />
+
+<img src="/images/client10.png" />
+
+#### 3.2 Cài CA vào Firefox
+	
+### 4. Kiểm tra
+
+- Khi truy cập vào `facebook.com`
 
 <img src="/images/test-1.png" />
 
+- Khi truy cập vào `youtube.com`
+
 <img src="/images/test-2.png" />
+
+- Khi truy cập vào `google.com`
 	
+<img src="/images/test-3.png" />

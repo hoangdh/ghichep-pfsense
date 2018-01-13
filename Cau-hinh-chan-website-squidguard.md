@@ -226,7 +226,7 @@ Bấm **Yes** để xác nhận cảnh báo.
 
 Thông báo thêm thành công CA. Bấm **OK** và **OK** để thoát.
 
-<img src="/images/client9.png" />
+<img src="/images/client9.png" /></br>
 
 <img src="/images/client10.png" />
 

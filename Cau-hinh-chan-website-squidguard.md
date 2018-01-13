@@ -196,17 +196,31 @@ Sau khi copy CA mà chúng ta đã tạo lên client. Chúng ta mở CA lên:
 
 <img src="/images/client1.png" />
 
+Bấm vào **Install Certificate...**
+
 <img src="/images/client2.png" />
+
+Chọn **Place all certificates in the following store", bấm vào **Browse...**
 
 <img src="/images/client3.png" />
 
+Chọn thư mục **Trust Root Certificate Authorities**
+
 <img src="/images/client4.png" />
+
+Bấm **Next** để tiếp tục
 
 <img src="/images/client5.png" />
 
+Bấm **Finish** để hoàn tất quá trình.
+
 <img src="/images/client6.png" />
 
+Bấm **Yes** để xác nhận cảnh báo.
+
 <img src="/images/client7.png" />
+
+Thông báo thêm thành công CA. Bấm **OK** và **OK** để thoát.
 
 <img src="/images/client8.png" />
 

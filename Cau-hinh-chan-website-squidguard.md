@@ -200,7 +200,7 @@ Bấm vào **Install Certificate...**
 
 <img src="/images/client2.png" />
 
-
+Một cửa sổ chào mừng xuất hiện. Bấm **Next** để tiếp tục
 
 <img src="/images/client3.png" />
 

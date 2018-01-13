@@ -231,7 +231,27 @@ Thông báo thêm thành công CA. Bấm **OK** và **OK** để thoát.
 <img src="/images/client10.png" />
 
 #### 3.2 Cài CA vào Firefox
-	
+
+Khởi động **Firefox**, **Menu > Options** (**Tùy chọn**)
+
+<img src="/images/ff1.png" />
+
+Tìm kiếm từ khóa `ca` và kéo xuống phần **Certificates** (**Chứng thư**) và bấm vào **View Certificate** (**Chứng thư**)
+
+<img src="/images/ff2.png" />
+
+Chọn tab **Authorities** (**Nhà thẩm định**), bấm vào **Import...** (**Nhập**)
+
+<img src="/images/ff3.png" />
+
+Chọn file CA đã tải từ Server**
+
+<img src="/images/ff4.png" />
+
+Đánh dấu các tùy chọn **Trust**
+
+<img src="/images/ff5.png" />
+
 ### 4. Kiểm tra
 
 - Khi truy cập vào `facebook.com`

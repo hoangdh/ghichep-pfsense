@@ -114,7 +114,7 @@ Tiếp đến, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
 
 	- Kích hoạt `squid`
 	
-	Chọn tab **Gerenal**, tích vào ô "Check to enable the Squid proxy."
+	Chọn tab **Gerenal**, tích vào ô "**Check to enable the Squid proxy.**"
 
 	<img src="/images/squid-5.png" />
 	

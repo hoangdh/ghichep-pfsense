@@ -44,3 +44,8 @@ Nhìn vào thông tin ở **Bước 4**, chúng ta thấy đã có 1 file SWAP t
 ```sh
 mdconfig -a -t vnode -f /usr/swap0 -u 1 && swapon /dev/md1
 ```
+
+### Tham khảo:
+
+- https://www.freebsd.org/doc/handbook/adding-swap-space.html
+- https://www.cyberciti.biz/faq/create-a-freebsd-swap-file/

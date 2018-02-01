@@ -24,7 +24,7 @@
 - **Bước 4**: Khai báo swap trong file `/etc/fstab`
 
 	```sh
-	echo 'md1	none	swap	sw,file=/usr/swap1	0	0' >> /etc/rc.conf
+	echo 'md1	none	swap	sw,file=/usr/swap1	0	0' >> /etc/fstab
 	```
 
 	**Chú ý**: `md1` là tên gán cho MD.  

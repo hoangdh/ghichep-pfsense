@@ -23,27 +23,35 @@ Sử dụng SSH để điều khiển pfSense.
 
 	`check_mk_agent` là một script viết bằng `bash`. Như vậy, chúng ta phải cài gói `bash` trên pfSense. 
 
-	```
+	```sh
 	pkg install -y bash
 	```
 
 - **Bước 2**: Tạo 2 thư mục đặc biệt
 
-	```
+	```sh
 	mkdir -p /opt/bin/
 	mkdir -p /opt/etc/xinetd.d
 	```
 	
 - **Bước 3**: Tải agent và phân quyền cho
 
-	```
+	```sh
 	curl --output /opt/bin/check_mk_agent 'https://git.mathias-kettner.de/git/?p=check_mk.git;a=blob_plain;f=agents/check_mk_agent.freebsd;hb=HEAD'
 	chmod +x /opt/bin/check_mk_agent
 	```
 
 - **Bước 4**: Tạo file cấu hình cho `check-mk`
 
+	- Chúng ta tạo file cấu hình tại `/opt/etc/xinetd.d/check_mk`.
+	
+	```sh
+	vi /opt/etc/xinetd.d/check_mk
 	```
+	
+	- Nội dung file
+
+	```sh
 	# +------------------------------------------------------------------+
 	# |             ____ _               _        __  __ _  __           |
 	# |            / ___| |__   ___  ___| | __   |  \/  | |/ /           |
@@ -94,7 +102,20 @@ Sử dụng SSH để điều khiển pfSense.
 	 
 		disable        = no
 	}
-	```	
+	```
+
+- **Bước 5**: Chỉnh sửa file cấu hình của "Filter Reload", để thêm file cấu hình ở bước trên
+
+	Chúng ta tìm đến dòng có chứa ` fclose($xinetd_fd);` và chèn thêm dòng sau vào file cấu hình
+	
+	```sh
+	fwrite($xinetd_fd, "includedir /opt/etc/xinetd.d"); 
+    fclose($xinetd_fd);             // Close file handle
+	```
+
+- **Bước 6**:
+
+- **Bước 7**:
 	
 <a name="3" />
 

@@ -104,27 +104,52 @@ Sử dụng SSH để điều khiển pfSense.
 	}
 	```
 
-- **Bước 5**: Chỉnh sửa file cấu hình của "Filter Reload", để thêm file cấu hình ở bước trên
+- **Bước 5**: Chỉnh sửa file cấu hình của "Filter Reload", để thêm file cấu hình của `check_mk`
 
-	Chúng ta tìm đến dòng có chứa ` fclose($xinetd_fd);` và chèn thêm dòng sau vào file cấu hình
+	Chúng ta tìm đến dòng có chứa ` fclose($xinetd_fd);` và chèn thêm dòng sau vào trước nó trong file cấu hình `/etc/inc/filter.inc`
+	
+	```sh
+	vi /etc/inc/filter.inc 
+	```
+	
+	Thêm dòng sau:
 	
 	```sh
 	fwrite($xinetd_fd, "includedir /opt/etc/xinetd.d"); 
-    fclose($xinetd_fd);             // Close file handle
 	```
+	
+	<img src="/images/monitor-1.png" />
+	
+	Lưu lại và thoát khỏi `vi`.	
 
-- **Bước 6**:
+- **Bước 6**: Nạp lại các filter thông qua GUI (**Status > Filter Reload**)
 
-- **Bước 7**:
+	<img src="/images/monitor-2.png" />
+	
+	<img src="/images/monitor-3.png" />
+	
+	<img src="/images/monitor-4.png" />
+
+	**Chú ý**: Mở port **6556** của FW để cho phép check_mk có thể truy cập để lấy dữ liệu.
+
 	
 <a name="3" />
 
 ### 3. Thêm pfSense vào check_mk
 
-<a name="4" />
+Bây giờ, chúng ta đăng nhập vào `check-mk` và thêm một host mới. 
 
+<img src="/images/monitor-5.png" />
+
+Chọn *Agent type* là **Check_MK Agent (Server)** sau đó bấm **Save & go to Services**
+
+<img src="/images/monitor-6.png" />
+
+<a name="4" />
 
 ### 4. Tham khảo
 
 - https://forum.pfsense.org/index.php?PHPSESSID=1envonkn9s2qss1gg8fb3kd7h2&topic=111517.0
 - https://openschoolsolutions.org/pfsense-monitoring-check-mk/
+
+**Đang cập nhật phần hướng dẫn Monitor qua SNMP**

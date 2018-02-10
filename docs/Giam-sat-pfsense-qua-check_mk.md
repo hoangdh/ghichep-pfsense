@@ -137,7 +137,7 @@ Sử dụng SSH để điều khiển pfSense.
 
 ### 3. Kích hoạt SNMP trên pfSense
 
-- **Bước 1**: Trên Dashboard chọn **Services > SNMP **
+- **Bước 1**: Trên Dashboard chọn **Services > SNMP**
 
 	<img src="/images/snmp1.png" />
 	
@@ -156,6 +156,8 @@ Sử dụng SSH để điều khiển pfSense.
 
 	<img src="/images/snmp3.png" />
 	
+	Thông báo cấu hình thành công!
+	
 	<img src="/images/snmp4.png" />
 	
 <a name="4" />
@@ -166,7 +168,7 @@ Bây giờ, chúng ta đăng nhập vào `check-mk` và thêm một host mới.
 
 <img src="/images/monitor-5.png" />
 
-Chọn *Agent type* là **Dual: Check_MK Agent + SNMP** sau đó bấm **Save & go to Services**
+Chọn *Agent type* là **Dual: Check_MK Agent + SNMP** và điền `Community String` mà bạn khai báo ở pfSense vào `SNMP credentials`. Sau đó bấm **Save & go to Services**
 
 <img src="/images/monitor-6.png" />
 
@@ -176,5 +178,3 @@ Chọn *Agent type* là **Dual: Check_MK Agent + SNMP** sau đó bấm **Save & 
 
 - https://forum.pfsense.org/index.php?PHPSESSID=1envonkn9s2qss1gg8fb3kd7h2&topic=111517.0
 - https://openschoolsolutions.org/pfsense-monitoring-check-mk/
-
-**Đang cập nhật phần hướng dẫn Monitor qua SNMP**

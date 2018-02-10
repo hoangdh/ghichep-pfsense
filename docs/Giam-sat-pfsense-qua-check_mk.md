@@ -4,8 +4,9 @@
 
 - [1. Giới thiệu](#1)
 - [2. Cài đặt check_mk_agent lên pfSense](#2)
-- [3. Thêm pfSense vào check_mk](#3)
-- [4. Tham khảo](#4)
+- [3. Cấu hình SNMP trên pfSense](#3)
+- [4. Thêm pfSense vào check_mk](#4)
+- [5. Tham khảo](#5)
 
 <a name="1" />
 	
@@ -132,22 +133,46 @@ Sử dụng SSH để điều khiển pfSense.
 
 	**Chú ý**: Mở port **6556** của FW để cho phép check_mk có thể truy cập để lấy dữ liệu.
 
-	
 <a name="3" />
 
-### 3. Thêm pfSense vào check_mk
+### 3. Kích hoạt SNMP trên pfSense
+
+- **Bước 1**: Trên Dashboard chọn **Services > SNMP **
+
+	<img src="/images/snmp1.png" />
+	
+- **Bước 2**: Khai báo thông tin
+
+	<img src="/images/snmp2.png" />
+	
+	**Giải thích:**
+	
+	- `(1)` Kích hoạt SNMP
+	- `(2)` Khai báo **System Location** (Tùy chọn)
+	- `(3)` Khai báo **System Contact** (Tùy chọn)
+	- `(4)` Khai báo **Community String** - QUAN TRỌNG: Chuỗi này sẽ được sử dụng để xác thực ở `check-mk`.
+
+- **Bước 3**: Lưu lại cấu hình
+
+	<img src="/images/snmp3.png" />
+	
+	<img src="/images/snmp4.png" />
+	
+<a name="4" />
+
+### 4. Thêm pfSense vào check_mk
 
 Bây giờ, chúng ta đăng nhập vào `check-mk` và thêm một host mới. 
 
 <img src="/images/monitor-5.png" />
 
-Chọn *Agent type* là **Check_MK Agent (Server)** sau đó bấm **Save & go to Services**
+Chọn *Agent type* là **Dual: Check_MK Agent + SNMP** sau đó bấm **Save & go to Services**
 
 <img src="/images/monitor-6.png" />
 
-<a name="4" />
+<a name="5" />
 
-### 4. Tham khảo
+### 5. Tham khảo
 
 - https://forum.pfsense.org/index.php?PHPSESSID=1envonkn9s2qss1gg8fb3kd7h2&topic=111517.0
 - https://openschoolsolutions.org/pfsense-monitoring-check-mk/

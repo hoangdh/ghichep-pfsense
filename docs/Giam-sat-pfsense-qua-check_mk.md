@@ -18,7 +18,7 @@ Việc giám sát hiệu năng hệ thống là một điều vô cùng quan tr�
 
 ### 2. Cài đặt check_mk_agent lên pfSense
 
-Sử dụng SSH để điều khiển pfSense.
+Sử dụng SSH để cấu hình pfSense.
 
 - **Bước 1**: Cài gói `bash`
 
@@ -35,7 +35,7 @@ Sử dụng SSH để điều khiển pfSense.
 	mkdir -p /opt/etc/xinetd.d
 	```
 	
-- **Bước 3**: Tải agent và phân quyền cho
+- **Bước 3**: Tải agent và phân quyền
 
 	```sh
 	curl --output /opt/bin/check_mk_agent 'https://git.mathias-kettner.de/git/?p=check_mk.git;a=blob_plain;f=agents/check_mk_agent.freebsd;hb=HEAD'

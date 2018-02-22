@@ -8,8 +8,10 @@
 	- [2.2 Cài đặt gói Squid và SquidGuard](#42)
 	- [2.3 Cấu hình Squid](#43)
 	- [2.4 Cấu hình SquidGuard](#44)
-- [3. Kiểm tra](#3)
-- [4. Tham khảo](#4)
+- [3. Hướng dẫn thêm CA lên máy client](#3)
+- [4. Kiểm tra](#4)
+- [5. Tham khảo](#5)
+- [Bonus: Cấu hình chặn HTTPS không cần cài CA](#6)
 
 
 <a name="1" />
@@ -185,6 +187,8 @@ Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình `squ
 	Bấm **SAVE** để lưu lại.
 	
 	<img src="/images/sg-10.png" />
+
+<a name="3" />
 	
 ### 3. Hướng dẫn thêm CA lên máy client
 
@@ -252,6 +256,8 @@ Chọn file CA đã tải từ Server**
 
 <img src="/images/ff5.png" />
 
+<a name="4" />
+
 ### 4. Kiểm tra
 
 - Khi truy cập vào `facebook.com`
@@ -265,3 +271,10 @@ Chọn file CA đã tải từ Server**
 - Khi truy cập vào `google.com`
 	
 <img src="/images/test-3.png" />
+
+<a name="5" />
+
+### Bonus:
+
+- Chọn SSL/MITM Mode: http://prntscr.com/iici4h
+- Chọn CA: http://prntscr.com/iicihs

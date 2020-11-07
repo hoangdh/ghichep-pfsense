@@ -4,14 +4,13 @@
 
 - [1. Giới thiệu](#1)
 - [2. Các bước tiến hành](#2)
-	- [2.1 Tạo CA](#41)
-	- [2.2 Cài đặt gói Squid và SquidGuard](#42)
-	- [2.3 Cấu hình Squid](#43)
-	- [2.4 Cấu hình SquidGuard](#44)
-- [3. Hướng dẫn thêm CA lên máy client](#3)
-- [4. Kiểm tra](#4)
-- [5. Tham khảo](#5)
-- [Bonus: Cấu hình chặn HTTPS không cần cài CA](#6)
+	- [2.1 Tạo CA](#21)
+	- [2.2 Cài đặt gói Squid và SquidGuard](#22)
+	- [2.3 Cấu hình Squid](#23)
+	- [2.4 Cấu hình SquidGuard](#24)
+- [3. Kiểm tra](#3)
+- [4. Tham khảo](#4)
+- [Bonus: Cấu hình chặn HTTPS không cần cài CA](#5)
 
 
 <a name="1" />
@@ -124,9 +123,13 @@ Tiếp đến, chúng ta sẽ cấu hình cơ bản cho `squid` - Proxy Server.
 	
 	<img src="/images/squid-9.png" />
 	
-	- Bật tính năng **SSL Man In the Middle Filtering** và chọn CA mới tạo ở Bước 1.	
+	- Bật tính năng **SSL Man In the Middle Filtering** và chọn CA mới tạo ở Bước 1.
 	
-	<img src="/images/squid-6.png" />
+	<img src="/images/squid-6-2.png" />
+
+	- Không kiểm tra Certificate từ phía client.
+
+	<img src="/images/squid-6-3.png" />
 	
 	- Bật tính năng ghi Log và cấu hình log xoay vòng trong 7 ngày.
 	
@@ -189,76 +192,7 @@ Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình `squ
 	<img src="/images/sg-10.png" />
 
 <a name="3" />
-	
-### 3. Hướng dẫn thêm CA lên máy client
-
-#### 3.1 Cài CA lên máy
-
-Thông thường các trình duyệt Web đều sử dụng chung một kho CA. Chúng ta làm theo các bước sau để thêm một CA vào 'kho' đó.
-
-Sau khi copy CA mà chúng ta đã tạo lên client. Chúng ta mở CA lên:
-
-<img src="/images/client1.png" />
-
-Bấm vào **Install Certificate...**
-
-<img src="/images/client2.png" />
-
-Một cửa sổ chào mừng xuất hiện. Bấm **Next** để tiếp tục
-
-<img src="/images/client3.png" />
-
-Chọn **Place all certificates in the following store**, bấm vào **Browse...**
-
-<img src="/images/client4.png" />
-
-Chọn thư mục **Trust Root Certificate Authorities**
-
-<img src="/images/client5.png" />
-
-Bấm **Next** để tiếp tục
-
-<img src="/images/client6.png" />
-
-Bấm **Finish** để hoàn tất quá trình.
-
-<img src="/images/client7.png" />
-
-Bấm **Yes** để xác nhận cảnh báo.
-
-<img src="/images/client8.png" />
-
-Thông báo thêm thành công CA. Bấm **OK** và **OK** để thoát.
-
-<img src="/images/client9.png" /></br>
-
-<img src="/images/client10.png" />
-
-#### 3.2 Cài CA vào Firefox
-
-Khởi động **Firefox**, **Menu > Options** (**Tùy chọn**)
-
-<img src="/images/ff1.png" />
-
-Tìm kiếm từ khóa `ca` và kéo xuống phần **Certificates** (**Chứng thư**) và bấm vào **View Certificate** (**Chứng thư**)
-
-<img src="/images/ff2.png" />
-
-Chọn tab **Authorities** (**Nhà thẩm định**), bấm vào **Import...** (**Nhập**)
-
-<img src="/images/ff3.png" />
-
-Chọn file CA đã tải từ Server**
-
-<img src="/images/ff4.png" />
-
-Đánh dấu các tùy chọn **Trust**
-
-<img src="/images/ff5.png" />
-
-<a name="4" />
-
-### 4. Kiểm tra
+### 3. Kiểm tra 
 
 - Khi truy cập vào `facebook.com`
 
@@ -272,8 +206,7 @@ Chọn file CA đã tải từ Server**
 	
 <img src="/images/test-3.png" />
 
-<a name="5" />
-
+<a name="4" />
 ### Bonus:
 
 - Chọn SSL/MITM Mode: http://prntscr.com/iici4h

@@ -192,6 +192,7 @@ Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình `squ
 	<img src="/images/sg-10.png" />
 
 <a name="3" />
+
 ### 3. Kiểm tra 
 
 - Khi truy cập vào `facebook.com`
@@ -207,6 +208,7 @@ Sau khi hoàn thành phần cấu hình `squid`, chúng ta sẽ cấu hình `squ
 <img src="/images/test-3.png" />
 
 <a name="4" />
+
 ### Bonus:
 
 - Chọn SSL/MITM Mode: http://prntscr.com/iici4h
